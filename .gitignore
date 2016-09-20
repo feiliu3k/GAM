@@ -1,4 +1,6 @@
 /SQLiteStudio
 /GAM/packages
+/GAM/GAM/bin
+/GAM/GAM/obj
 qy.zip
 sqlite-uwp-3140100.vsix
