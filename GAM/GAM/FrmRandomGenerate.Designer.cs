@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(117, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 798);
+            this.panel1.Size = new System.Drawing.Size(1015, 884);
             this.panel1.TabIndex = 0;
             // 
             // panel9
@@ -147,7 +147,7 @@
             this.panel8.Controls.Add(this.btnCancel);
             this.panel8.Controls.Add(this.btnSave);
             this.panel8.Controls.Add(this.btnPrint);
-            this.panel8.Location = new System.Drawing.Point(3, 724);
+            this.panel8.Location = new System.Drawing.Point(3, 810);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1007, 69);
             this.panel8.TabIndex = 8;
@@ -198,9 +198,10 @@
             this.pnlEnterprise.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlEnterprise.AutoScroll = true;
             this.pnlEnterprise.Location = new System.Drawing.Point(3, 419);
             this.pnlEnterprise.Name = "pnlEnterprise";
-            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 288);
+            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 374);
             this.pnlEnterprise.TabIndex = 7;
             // 
             // panel6
@@ -415,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 811);
+            this.ClientSize = new System.Drawing.Size(1273, 897);
             this.Controls.Add(this.panel1);
             this.Name = "FrmRandomGenerate";
             this.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);

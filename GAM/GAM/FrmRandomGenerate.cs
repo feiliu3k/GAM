@@ -29,14 +29,16 @@ namespace GAM
             int listCount = txtEnt.Count();
             if (entNum > listCount)
             {
-                //增加TextBox
-                TextBox txtEntName = new TextBox();
-                txtEntName.Width = 845;
-                txtEntName.Height = 31;
-                txtEntName.Left = 51;
-                txtEntName.Top = 21;
-                txtEntName.Parent = pnlEnterprise;
-                txtEntName.Font.
+                for(int i = 0; i< (entNum - listCount); i++) { 
+                    TextBox txtEntName = new TextBox();
+                    txtEntName.Width = 845;
+                    txtEntName.Height = 25;
+                    txtEntName.Left = 51;
+                    txtEntName.Top = 3+ (txtEnt.Count()) * (25+10);
+                    txtEntName.Parent = pnlEnterprise;
+                    txtEntName.Font= new Font("宋体", txtChargeMan.Font.Size, txtChargeMan.Font.Style);
+                    txtEnt.Add(txtEntName);
+                }
 
             }
             else
