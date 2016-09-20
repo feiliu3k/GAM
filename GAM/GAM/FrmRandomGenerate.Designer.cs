@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(117, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 884);
+            this.panel1.Size = new System.Drawing.Size(1015, 718);
             this.panel1.TabIndex = 0;
             // 
             // panel9
@@ -95,16 +95,16 @@
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.nudEnterprise);
             this.panel9.Controls.Add(this.label10);
-            this.panel9.Location = new System.Drawing.Point(3, 357);
+            this.panel9.Location = new System.Drawing.Point(3, 266);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1007, 56);
+            this.panel9.Size = new System.Drawing.Size(1007, 47);
             this.panel9.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(316, 17);
+            this.label9.Location = new System.Drawing.Point(316, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 21);
             this.label9.TabIndex = 10;
@@ -113,27 +113,17 @@
             // nudEnterprise
             // 
             this.nudEnterprise.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.nudEnterprise.Location = new System.Drawing.Point(261, 15);
-            this.nudEnterprise.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudEnterprise.Location = new System.Drawing.Point(261, 7);
             this.nudEnterprise.Name = "nudEnterprise";
             this.nudEnterprise.Size = new System.Drawing.Size(49, 31);
             this.nudEnterprise.TabIndex = 9;
-            this.nudEnterprise.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudEnterprise.ValueChanged += new System.EventHandler(this.nudEnterprise_ValueChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(3, 17);
+            this.label10.Location = new System.Drawing.Point(3, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(252, 21);
             this.label10.TabIndex = 8;
@@ -147,25 +137,26 @@
             this.panel8.Controls.Add(this.btnCancel);
             this.panel8.Controls.Add(this.btnSave);
             this.panel8.Controls.Add(this.btnPrint);
-            this.panel8.Location = new System.Drawing.Point(3, 810);
+            this.panel8.Location = new System.Drawing.Point(-1, 653);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1007, 69);
+            this.panel8.Size = new System.Drawing.Size(1012, 61);
             this.panel8.TabIndex = 8;
             // 
             // btnRandomGenerate
             // 
             this.btnRandomGenerate.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnRandomGenerate.Location = new System.Drawing.Point(226, 15);
+            this.btnRandomGenerate.Location = new System.Drawing.Point(265, 5);
             this.btnRandomGenerate.Name = "btnRandomGenerate";
             this.btnRandomGenerate.Size = new System.Drawing.Size(100, 40);
             this.btnRandomGenerate.TabIndex = 3;
             this.btnRandomGenerate.Text = "随机抽取";
             this.btnRandomGenerate.UseVisualStyleBackColor = true;
+            this.btnRandomGenerate.Click += new System.EventHandler(this.btnRandomGenerate_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCancel.Location = new System.Drawing.Point(592, 15);
+            this.btnCancel.Location = new System.Drawing.Point(631, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 2;
@@ -176,22 +167,24 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSave.Location = new System.Drawing.Point(470, 15);
+            this.btnSave.Location = new System.Drawing.Point(509, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 40);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPrint.Location = new System.Drawing.Point(348, 15);
+            this.btnPrint.Location = new System.Drawing.Point(387, 5);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(100, 40);
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "打印";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlEnterprise
             // 
@@ -199,9 +192,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEnterprise.AutoScroll = true;
-            this.pnlEnterprise.Location = new System.Drawing.Point(3, 419);
+            this.pnlEnterprise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEnterprise.Location = new System.Drawing.Point(3, 319);
             this.pnlEnterprise.Name = "pnlEnterprise";
-            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 374);
+            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 333);
             this.pnlEnterprise.TabIndex = 7;
             // 
             // panel6
@@ -210,9 +204,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.txtArea);
             this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(3, 295);
+            this.panel6.Location = new System.Drawing.Point(3, 219);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1007, 56);
+            this.panel6.Size = new System.Drawing.Size(1007, 47);
             this.panel6.TabIndex = 6;
             // 
             // txtArea
@@ -239,9 +233,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.txtCate);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(3, 233);
+            this.panel5.Location = new System.Drawing.Point(3, 172);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1007, 56);
+            this.panel5.Size = new System.Drawing.Size(1007, 47);
             this.panel5.TabIndex = 5;
             // 
             // txtCate
@@ -270,9 +264,9 @@
             this.panel4.Controls.Add(this.nudCommonMan);
             this.panel4.Controls.Add(this.txtCommonMan);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 171);
+            this.panel4.Location = new System.Drawing.Point(3, 125);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1007, 56);
+            this.panel4.Size = new System.Drawing.Size(1007, 47);
             this.panel4.TabIndex = 4;
             // 
             // label5
@@ -329,9 +323,9 @@
             this.panel3.Controls.Add(this.nudChargeMan);
             this.panel3.Controls.Add(this.txtChargeMan);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(3, 109);
+            this.panel3.Location = new System.Drawing.Point(3, 78);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1007, 56);
+            this.panel3.Size = new System.Drawing.Size(1007, 47);
             this.panel3.TabIndex = 3;
             // 
             // label4
@@ -388,14 +382,14 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(-1, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1015, 100);
+            this.panel2.Size = new System.Drawing.Size(1015, 75);
             this.panel2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(230, 50);
+            this.label2.Location = new System.Drawing.Point(230, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(555, 35);
             this.label2.TabIndex = 3;
@@ -406,7 +400,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(287, 15);
+            this.label1.Location = new System.Drawing.Point(288, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(447, 35);
             this.label1.TabIndex = 2;
@@ -416,12 +410,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 897);
+            this.ClientSize = new System.Drawing.Size(1273, 733);
             this.Controls.Add(this.panel1);
             this.Name = "FrmRandomGenerate";
             this.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "随机收取";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
