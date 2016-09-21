@@ -58,7 +58,7 @@ namespace GAM.Models
         public DateTime Birth { get; set; }
         public string Sex { get; set; }
         public string Addr { get; set; }
-        public string phone { get; set; }
+        public string Phone { get; set; }
         public string Remark { get; set; }
         public bool IsDelflag { get; set; }
 

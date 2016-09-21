@@ -148,7 +148,7 @@ namespace GAM
             txtName.Text = cm.Name;
             cbbSex.Text = cm.Sex;
             dtpBirth.Value = cm.Birth;
-            txtPhone.Text = cm.phone;
+            txtPhone.Text = cm.Phone;
             rtbAddr.Text = cm.Addr;
             rtbRemark.Text = cm.Remark;
 

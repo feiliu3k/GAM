@@ -296,6 +296,7 @@
             0,
             0,
             0});
+            this.nudCommonMan.ValueChanged += new System.EventHandler(this.nudChargeMan_ValueChanged);
             // 
             // txtCommonMan
             // 
@@ -355,6 +356,7 @@
             0,
             0,
             0});
+            this.nudChargeMan.ValueChanged += new System.EventHandler(this.nudChargeMan_ValueChanged);
             // 
             // txtChargeMan
             // 
@@ -417,6 +419,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "随机收取";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmRandomGenerate_Load);
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
