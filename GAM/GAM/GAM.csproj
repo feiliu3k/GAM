@@ -51,6 +51,8 @@
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +85,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.102.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -172,6 +175,12 @@
     <Compile Include="FrmRandomGenerate.Designer.cs">
       <DependentUpon>FrmRandomGenerate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Libs\ExcelHelper.cs" />
     <Compile Include="Libs\SQLiteHelper.cs" />
     <Compile Include="Models\Model.cs" />
@@ -216,6 +225,9 @@
     <EmbeddedResource Include="FrmRandomGenerate.resx">
       <DependentUpon>FrmRandomGenerate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -226,7 +238,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GAM.Models.Area.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.ChargeMan.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.CommonMan.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.DbEntityEnterprise.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.Enterprise.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.EnterpriseCategory.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.EnterpriseType.datasource" />
+    <None Include="Properties\DataSources\GAM.Models.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

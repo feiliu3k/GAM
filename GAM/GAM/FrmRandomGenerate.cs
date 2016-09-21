@@ -29,8 +29,8 @@ namespace GAM
 
         List<CommonMan> choiceCommonMen = new List<CommonMan>();
         List<ChargeMan> choiceChargeMen = new List<ChargeMan>();
-        List<Area> choiceAreas =new List<Area>();
-        List<EnterpriseCategory> choiceCates = new List<EnterpriseCategory>();
+        Area choiceArea =null;
+        EnterpriseCategory choiceCate = null;
         List<DbEntityEnterprise> choiceEnts = new List<DbEntityEnterprise>();
 
         private string databasename;
@@ -98,6 +98,15 @@ namespace GAM
         private void btnRandomGenerate_Click(object sender, EventArgs e)
         {
             initInput();
+            SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
+            sb.DataSource = databasename;
+            SQLiteConnection con = new SQLiteConnection(sb.ToString());
+            con.Open();
+            commonMen = con.Query<CommonMan>("select * from common_man where delflag=0").ToList();
+            chargeMen = con.Query<ChargeMan>("select * from charge_man where delflag=0").ToList();
+            areas = con.Query<Area>("select * from areas where delflag=0").ToList();
+            cates = con.Query<EnterpriseCategory>("select * from enterprise_category where delflag=0").ToList();
+            
             int chargeManNum = int.Parse(nudChargeMan.Value.ToString());
             int CommonManNum = int.Parse(nudCommonMan.Value.ToString());
             int entNum = int.Parse(nudEnterprise.Value.ToString());
@@ -128,20 +137,17 @@ namespace GAM
                 EnterpriseCategory cate = cates.OrderBy(_ => Guid.NewGuid()).First();
                 txtCate.Text = cate.Catename;
                 cates.Remove(cate);
-                choiceCates.Add(cate);
+                choiceCate=cate;
                 //获得区域数据
                 Area area = areas.OrderBy(_ => Guid.NewGuid()).First();
                 txtArea.Text = area.Areaname;
                 areas.Remove(area);
-                choiceAreas.Add(area);
+                choiceArea=area;
                 
                 //根据类型和区域，获得企业数据
                
 
-                SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
-                sb.DataSource = databasename;
-                SQLiteConnection con = new SQLiteConnection(sb.ToString());
-                con.Open();               
+                            
                 ents = con.Query<DbEntityEnterprise>("select * from enterprise where delflag=0 and cateid=@cateid and areaid=@areaid", new {
                     cateid=cate.Id,
                     areaid=area.Id
@@ -175,6 +181,9 @@ namespace GAM
             }
 
             //打印报表
+            FrmReport frmReport = new FrmReport();
+            frmReport.ShowDialog();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -229,16 +238,7 @@ namespace GAM
 
         private void FrmRandomGenerate_Load(object sender, EventArgs e)
         {
-            initInput();
-            SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
-            sb.DataSource = databasename;
-            SQLiteConnection con = new SQLiteConnection(sb.ToString());
-            con.Open();
-            commonMen = con.Query<CommonMan>("select * from common_man where delflag=0").ToList();
-            chargeMen = con.Query<ChargeMan>("select * from charge_man where delflag=0").ToList();
-            areas = con.Query<Area>("select * from areas where delflag=0").ToList();
-            cates = con.Query<EnterpriseCategory>("select * from enterprise_category where delflag=0").ToList();
-            con.Close();
+            initInput(); 
         }
 
         private void nudChargeMan_ValueChanged(object sender, EventArgs e)

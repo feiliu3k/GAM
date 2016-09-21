@@ -81,7 +81,6 @@ namespace GAM
         {
             FrmHistoryData frmHistoryData = new FrmHistoryData();
             frmHistoryData.ShowDialog();
-
         }
     }
 }
