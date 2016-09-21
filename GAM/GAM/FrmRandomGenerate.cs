@@ -223,6 +223,7 @@ namespace GAM
                 });
                 saveflag = true;
                 con.Close();
+                btnSave.Enabled = false;
             }
         }
 

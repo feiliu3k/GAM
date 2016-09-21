@@ -148,6 +148,12 @@
     <Compile Include="FrmEntUpdate.Designer.cs">
       <DependentUpon>FrmEntUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHistoryData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistoryData.Designer.cs">
+      <DependentUpon>FrmHistoryData.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEntUpdate.resx">
       <DependentUpon>FrmEntUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistoryData.resx">
+      <DependentUpon>FrmHistoryData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

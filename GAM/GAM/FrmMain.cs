@@ -76,5 +76,12 @@ namespace GAM
             FrmEntLoad frmEntLoad = new FrmEntLoad();
             frmEntLoad.ShowDialog();
         }
+
+        private void historyDdataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmHistoryData frmHistoryData = new FrmHistoryData();
+            frmHistoryData.ShowDialog();
+
+        }
     }
 }

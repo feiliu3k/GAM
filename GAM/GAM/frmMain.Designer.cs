@@ -42,11 +42,11 @@
             this.EntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EntAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EntQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EntLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomGenerateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyDdataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.EntLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,16 +153,23 @@
             // EntAddToolStripMenuItem
             // 
             this.EntAddToolStripMenuItem.Name = "EntAddToolStripMenuItem";
-            this.EntAddToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.EntAddToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
             this.EntAddToolStripMenuItem.Text = "添加";
             this.EntAddToolStripMenuItem.Click += new System.EventHandler(this.EntAddToolStripMenuItem_Click);
             // 
             // EntQueryToolStripMenuItem
             // 
             this.EntQueryToolStripMenuItem.Name = "EntQueryToolStripMenuItem";
-            this.EntQueryToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.EntQueryToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
             this.EntQueryToolStripMenuItem.Text = "查询";
             this.EntQueryToolStripMenuItem.Click += new System.EventHandler(this.EntQueryToolStripMenuItem_Click);
+            // 
+            // EntLoadToolStripMenuItem
+            // 
+            this.EntLoadToolStripMenuItem.Name = "EntLoadToolStripMenuItem";
+            this.EntLoadToolStripMenuItem.Size = new System.Drawing.Size(112, 26);
+            this.EntLoadToolStripMenuItem.Text = "导入";
+            this.EntLoadToolStripMenuItem.Click += new System.EventHandler(this.EntLoadToolStripMenuItem_Click);
             // 
             // generateToolStripMenuItem
             // 
@@ -176,15 +183,16 @@
             // randomGenerateToolStripMenuItem
             // 
             this.randomGenerateToolStripMenuItem.Name = "randomGenerateToolStripMenuItem";
-            this.randomGenerateToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.randomGenerateToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.randomGenerateToolStripMenuItem.Text = "随机抽取";
             this.randomGenerateToolStripMenuItem.Click += new System.EventHandler(this.randomGenerateToolStripMenuItem_Click);
             // 
             // historyDdataToolStripMenuItem
             // 
             this.historyDdataToolStripMenuItem.Name = "historyDdataToolStripMenuItem";
-            this.historyDdataToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.historyDdataToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.historyDdataToolStripMenuItem.Text = "历史数据";
+            this.historyDdataToolStripMenuItem.Click += new System.EventHandler(this.historyDdataToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -194,13 +202,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1362, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // EntLoadToolStripMenuItem
-            // 
-            this.EntLoadToolStripMenuItem.Name = "EntLoadToolStripMenuItem";
-            this.EntLoadToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-            this.EntLoadToolStripMenuItem.Text = "导入";
-            this.EntLoadToolStripMenuItem.Click += new System.EventHandler(this.EntLoadToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
