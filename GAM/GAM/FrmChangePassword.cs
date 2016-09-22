@@ -7,45 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using System.Data.SQLite;
+using System.Configuration;
 using Dapper;
 using GAM.Models;
 
-
 namespace GAM
 {
-    public partial class FrmLogin : Form
+    public partial class FrmChangePassword : Form
     {
         private string databasename;
-       
-        public FrmLogin()
+        public FrmChangePassword()
         {
             InitializeComponent();
             databasename = ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
+            
             string password = txtPassword.Text.Trim();
+            string newpassword = txtNewPassword.Text.Trim();
+            string confirmpassword = txtConfirmPassword.Text.Trim();
 
             SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
             sb.DataSource = databasename;
             SQLiteConnection con = new SQLiteConnection(sb.ToString());
+            string username = "admin";
             con.Open();
             User user = con.Query<User>("select * from users where active=1 and username=@username", new { username = username }).Single();
-            if ((null != user)&&(user.Password==password))
+            if ((null != user) && (user.Password == password))
             {
-               
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (newpassword == confirmpassword)
+                {
+                    con.Execute("update users set password=@newpassword where username=@username", new {
+                        newpassword = newpassword,
+                        username = username
+                    });
+                }
+                else{
+                    MessageBox.Show("输入的密码不一致，请检查!", "错误");
+                }
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
+            con.Close();
             this.Close();
         }
     }

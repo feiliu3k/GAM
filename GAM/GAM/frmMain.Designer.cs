@@ -47,6 +47,7 @@
             this.randomGenerateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyDdataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             this.CommonManToolStripMenuItem,
             this.ChargeManToolStripMenuItem,
             this.toolStripMenuItem2,
+            this.changePasswordToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Size = new System.Drawing.Size(54, 25);
@@ -91,52 +93,52 @@
             // TypeToolStripMenuItem
             // 
             this.TypeToolStripMenuItem.Name = "TypeToolStripMenuItem";
-            this.TypeToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.TypeToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.TypeToolStripMenuItem.Text = "企业类型";
             this.TypeToolStripMenuItem.Click += new System.EventHandler(this.TypeToolStripMenuItem_Click);
             // 
             // CateToolStripMenuItem
             // 
             this.CateToolStripMenuItem.Name = "CateToolStripMenuItem";
-            this.CateToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.CateToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.CateToolStripMenuItem.Text = "管理类别";
             this.CateToolStripMenuItem.Click += new System.EventHandler(this.CateToolStripMenuItem_Click);
             // 
             // AreaToolStripMenuItem
             // 
             this.AreaToolStripMenuItem.Name = "AreaToolStripMenuItem";
-            this.AreaToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.AreaToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.AreaToolStripMenuItem.Text = "区域";
             this.AreaToolStripMenuItem.Click += new System.EventHandler(this.AreaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(141, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // CommonManToolStripMenuItem
             // 
             this.CommonManToolStripMenuItem.Name = "CommonManToolStripMenuItem";
-            this.CommonManToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.CommonManToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.CommonManToolStripMenuItem.Text = "工作人员";
             this.CommonManToolStripMenuItem.Click += new System.EventHandler(this.CommonManToolStripMenuItem_Click);
             // 
             // ChargeManToolStripMenuItem
             // 
             this.ChargeManToolStripMenuItem.Name = "ChargeManToolStripMenuItem";
-            this.ChargeManToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.ChargeManToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.ChargeManToolStripMenuItem.Text = "组长";
             this.ChargeManToolStripMenuItem.Click += new System.EventHandler(this.ChargeManToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(141, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.ExitToolStripMenuItem.Text = "退出";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -183,14 +185,14 @@
             // randomGenerateToolStripMenuItem
             // 
             this.randomGenerateToolStripMenuItem.Name = "randomGenerateToolStripMenuItem";
-            this.randomGenerateToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.randomGenerateToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.randomGenerateToolStripMenuItem.Text = "随机抽取";
             this.randomGenerateToolStripMenuItem.Click += new System.EventHandler(this.randomGenerateToolStripMenuItem_Click);
             // 
             // historyDdataToolStripMenuItem
             // 
             this.historyDdataToolStripMenuItem.Name = "historyDdataToolStripMenuItem";
-            this.historyDdataToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.historyDdataToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.historyDdataToolStripMenuItem.Text = "历史数据";
             this.historyDdataToolStripMenuItem.Click += new System.EventHandler(this.historyDdataToolStripMenuItem_Click);
             // 
@@ -202,6 +204,13 @@
             this.toolStrip1.Size = new System.Drawing.Size(1362, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.changePasswordToolStripMenuItem.Text = "修改密码";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -247,6 +256,7 @@
         private System.Windows.Forms.ToolStripMenuItem randomGenerateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historyDdataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EntLoadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }
 

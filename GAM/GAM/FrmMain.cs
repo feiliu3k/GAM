@@ -82,5 +82,11 @@ namespace GAM
             FrmHistoryData frmHistoryData = new FrmHistoryData();
             frmHistoryData.ShowDialog();
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChangePassword frmChangePassword = new FrmChangePassword();
+            frmChangePassword.ShowDialog();
+        }
     }
 }

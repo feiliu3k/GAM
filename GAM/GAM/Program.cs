@@ -18,17 +18,17 @@ namespace GAM
             Application.SetCompatibleTextRenderingDefault(false);
 
            
-          /*  FrmLogin frmLogin = new FrmLogin();
+            FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
             if (frmLogin.DialogResult == DialogResult.OK)
             {
-                Application.Run(new FrmMain(frmLogin.userInfo));
+                Application.Run(new FrmMain());
             }
             else
             {
                 return;
             }
-            */
+            
             Application.Run(new FrmMain());
         }
     }
