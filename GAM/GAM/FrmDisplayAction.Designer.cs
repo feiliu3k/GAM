@@ -32,6 +32,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.pnlEnterprise = new System.Windows.Forms.Panel();
@@ -50,7 +51,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtCreatAt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -59,12 +61,14 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.pnlEnterprise);
@@ -110,6 +114,18 @@
             this.panel8.Size = new System.Drawing.Size(1012, 61);
             this.panel8.TabIndex = 8;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(115, 6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -130,6 +146,7 @@
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "打印";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlEnterprise
             // 
@@ -140,7 +157,7 @@
             this.pnlEnterprise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEnterprise.Location = new System.Drawing.Point(3, 304);
             this.pnlEnterprise.Name = "pnlEnterprise";
-            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 444);
+            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 404);
             this.pnlEnterprise.TabIndex = 7;
             // 
             // panel6
@@ -291,17 +308,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "汕头市文化广电新闻出版局";
             // 
-            // btnDelete
+            // panel10
             // 
-            this.btnDelete.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(115, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 40);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "删除";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.Controls.Add(this.txtCreatAt);
+            this.panel10.Location = new System.Drawing.Point(3, 711);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1007, 37);
+            this.panel10.TabIndex = 11;
+            // 
+            // txtCreatAt
+            // 
+            this.txtCreatAt.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCreatAt.Location = new System.Drawing.Point(724, 3);
+            this.txtCreatAt.Name = "txtCreatAt";
+            this.txtCreatAt.Size = new System.Drawing.Size(280, 31);
+            this.txtCreatAt.TabIndex = 6;
             // 
             // FrmDisplayAction
             // 
@@ -327,6 +350,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +381,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtCreatAt;
     }
 }

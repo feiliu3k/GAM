@@ -72,6 +72,12 @@ namespace GAM
                 
             }).ToList();
 
+
+            CheckAction ca=con.Query<CheckAction>("select id,create_at from check_action where id=@actionID", new
+            {
+                actionID = this.actionID
+            }).Single();
+            txtCreatAt.Text = ca.Create_at.ToString();
             con.Close();
 
             int entNum = ents.Count;
@@ -111,6 +117,11 @@ namespace GAM
                 MessageBox.Show("数据已删除!", "信息");
                 this.Close();
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,7 +34,7 @@ namespace GAM
                         " join areas ar on c.area_id = ar.id" +
                         " join choice_charge_man cchm on c.id = cchm.checkaction_id" +
                         " join charge_man chm on chm.id = cchm.chargeman_id" +
-                        " where c.delflag = 0 and c.create_at between "+ dateTimePicker1.Value +" and "+ dateTimePicker2.Value;
+                        " where c.delflag = 0 and c.create_at between '"+ dateTimePicker1.Value +"' and '"+ dateTimePicker2.Value+"'";
             DataTable dt = new DataTable();           
             SQLiteCommand command = new SQLiteCommand(sql, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);

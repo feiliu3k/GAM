@@ -249,14 +249,7 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\GAM.Models.Area.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.ChargeMan.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.CommonMan.datasource" />
     <None Include="Properties\DataSources\GAM.Models.DbEntityEnterprise.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.Enterprise.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.EnterpriseCategory.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.EnterpriseType.datasource" />
-    <None Include="Properties\DataSources\GAM.Models.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

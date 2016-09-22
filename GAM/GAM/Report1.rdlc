@@ -281,7 +281,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!chargeMan.Value</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -324,7 +324,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!commonMen.Value</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -367,7 +367,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!cateName.Value</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -410,7 +410,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=Parameters!areaName.Value</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -440,6 +440,36 @@
             <Style>Solid</Style>
             <Width>1pt</Width>
           </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Name">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Name.Value, "myds")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Name</rd:DefaultName>
+        <Top>10.0718cm</Top>
+        <Left>3.35703cm</Left>
+        <Height>0.6cm</Height>
+        <Width>20.40696cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -488,11 +518,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>c3e2aff4-ca38-45a5-8868-f0309b6294d8</rd:DataSourceID>
+      <rd:DataSourceID>aba4c789-3e48-46ba-b56a-b76c6a366cf9</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="myds">
       <Query>
         <DataSourceName>GAMModels</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -558,6 +588,24 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="chargeMan">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="commonMen">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cateName">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="areaName">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <Variables>
     <Variable Name="chargeMan">
       <Value />

@@ -18,20 +18,20 @@ namespace GAM
 {
     public partial class FrmRandomGenerate : Form
     {
-        List<TextBox> tbEnts = new List<TextBox>();
+        private List<TextBox> tbEnts = new List<TextBox>();
 
-        List<CommonMan> commonMen = null;
-        List<ChargeMan> chargeMen = null;
-        List<Area> areas = null;
-        List<EnterpriseCategory> cates = null;
-        List<DbEntityEnterprise> ents = null;
+        private List<CommonMan> commonMen = null;
+        private List<ChargeMan> chargeMen = null;
+        private List<Area> areas = null;
+        private List<EnterpriseCategory> cates = null;
+        private List<DbEntityEnterprise> ents = null;
 
 
-        List<CommonMan> choiceCommonMen = new List<CommonMan>();
-        List<ChargeMan> choiceChargeMen = new List<ChargeMan>();
-        Area choiceArea =null;
-        EnterpriseCategory choiceCate = null;
-        List<DbEntityEnterprise> choiceEnts = new List<DbEntityEnterprise>();
+        private List<CommonMan> choiceCommonMen = new List<CommonMan>();
+        private List<ChargeMan> choiceChargeMen = new List<ChargeMan>();
+        private Area choiceArea =null;
+        private EnterpriseCategory choiceCate = null;
+        private List<DbEntityEnterprise> choiceEnts = new List<DbEntityEnterprise>();
 
         private string databasename;
         private bool saveflag = false;
@@ -98,6 +98,12 @@ namespace GAM
         private void btnRandomGenerate_Click(object sender, EventArgs e)
         {
             initInput();
+            choiceCommonMen = new List<CommonMan>();
+            choiceChargeMen = new List<ChargeMan>();
+            choiceArea = null;
+            choiceCate = null;
+            choiceEnts = new List<DbEntityEnterprise>();
+
             SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
             sb.DataSource = databasename;
             SQLiteConnection con = new SQLiteConnection(sb.ToString());
@@ -161,7 +167,7 @@ namespace GAM
                         break;
                     }
                     DbEntityEnterprise ent = ents.OrderBy(_ => Guid.NewGuid()).First();
-                    tbEnts[i].Text = ent.Name;
+                    tbEnts[i].Text =(i+1)+"、"+ ent.Name;
                     ents.Remove(ent);
                     choiceEnts.Add(ent);
                    
@@ -179,9 +185,12 @@ namespace GAM
             {
                 btnSave_Click(sender, e);
             }
+            
 
+
+           
             //打印报表
-            FrmReport frmReport = new FrmReport();
+            FrmReport frmReport = new FrmReport(choiceCommonMen, choiceChargeMen, choiceArea, choiceCate, choiceEnts);
             frmReport.ShowDialog();
 
         }

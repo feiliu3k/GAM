@@ -98,13 +98,11 @@ namespace GAM.Models
         public string Remark { get; set; }
         public bool IsDelflag { get; set; }
     }
+        
 
     public class CheckAction
     {
-        public List<CommonMan> choiceCommonMen { get; set; }
-        public List<ChargeMan> choiceChargeMen { get; set; }
-        public Area choiceArea { get; set; }
-        public EnterpriseCategory choiceCate { get; set; }
-        public List<DbEntityEnterprise> choiceEnts { get; set; }
+        public int Id { get; set; }        
+        public DateTime Create_at { get; set; } 
     }
 }
