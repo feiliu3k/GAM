@@ -154,7 +154,7 @@ namespace GAM
                 }).ToList();
                 con.Close();
                
-                for (int i = 0; i < Int32.Parse(nudCommonMan.Value.ToString()); i++)
+                for (int i = 0; i < Int32.Parse(nudEnterprise.Value.ToString()); i++)
                 {
                     if ((ents.Count == 0)|| (tbEnts.Count==0))
                     {
@@ -194,42 +194,48 @@ namespace GAM
             }
             else
             {
-                string charge_ids = "";
-                foreach (ChargeMan chm in choiceChargeMen)
-                {
-                    charge_ids = chm.Id.ToString() + ':';
-                }
-                charge_ids = charge_ids.Substring(0, charge_ids.Length - 1);
-
-                string common_ids = "";
-                foreach (CommonMan cm in choiceCommonMen)
-                {
-                    common_ids = cm.Id.ToString() + ':';
-                }
-                common_ids = common_ids.Substring(0, common_ids.Length - 1);
-
-                string chkent_ids = "";
-                foreach (DbEntityEnterprise ent in choiceEnts)
-                {
-                    chkent_ids = ent.Id.ToString() + ':';
-                }
-                chkent_ids = chkent_ids.Substring(0, chkent_ids.Length - 1);
-
                 SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
                 sb.DataSource = databasename;
                 SQLiteConnection con = new SQLiteConnection(sb.ToString());
-                con.Open();
-                con.Execute("insert into check_action(charge_num,charge_ids,common_num,common_ids, area_id,cate_id,chkent_num,chkent_ids) values (@charge_num,@charge_ids,@common_num,@common_ids,@area_id,@cate_id,@chkent_num,@chkent_ids)", new
-                {
-                    charge_num = int.Parse(nudChargeMan.Value.ToString()),
-                    charge_ids = charge_ids,
-                    common_num = int.Parse(nudCommonMan.Value.ToString()),
-                    common_ids = common_ids,
+                con.Open();                
+                int actionid=con.Execute("insert into check_action(area_id,cate_id,charge_num,common_num,chkent_num) values (@area_id,@cate_id,@charge_num,@common_num,@chkent_num)", new
+                { 
                     area_id = areas[0].Id,
                     cate_id = cates[0].Id,
-                    chkent_num = int.Parse(nudEnterprise.Value.ToString()),
-                    chkent_ids = chkent_ids,
+                    common_num = int.Parse(nudCommonMan.Value.ToString()),
+                    charge_num = int.Parse(nudChargeMan.Value.ToString()),
+                    chkent_num = int.Parse(nudEnterprise.Value.ToString())                   
                 });
+                foreach (ChargeMan chm in choiceChargeMen)
+                {
+                    con.Execute("insert into choice_charge_man(chargeman_id,checkaction_id) values (@chargeman_id,@checkaction_id)", new
+                    {
+                        chargeman_id = chm.Id,
+                        checkaction_id = actionid,
+
+                    });
+                }
+
+                foreach (CommonMan cm in choiceCommonMen)
+                {
+                    con.Execute("insert into choice_common_man(commonman_id,checkaction_id) values (@commonman_id,@checkaction_id)", new
+                    {
+                        commonman_id = cm.Id,
+                        checkaction_id = actionid,
+
+                    });
+                }
+
+                foreach (DbEntityEnterprise ee in choiceEnts)
+                {
+                    con.Execute("insert into choice_enterprise(enterprise_id,checkaction_id) values (@enterprise_id,@checkaction_id)", new
+                    {
+                        enterprise_id = ee.Id,
+                        checkaction_id = actionid,
+
+                    });
+                }
+
                 saveflag = true;
                 con.Close();
                 btnSave.Enabled = false;

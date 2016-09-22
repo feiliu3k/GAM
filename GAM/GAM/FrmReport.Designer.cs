@@ -33,20 +33,18 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "GAM.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-2, 1);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1232, 904);
+            this.reportViewer1.Size = new System.Drawing.Size(1005, 988);
             this.reportViewer1.TabIndex = 0;
             // 
             // FrmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 905);
+            this.ClientSize = new System.Drawing.Size(1005, 988);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
