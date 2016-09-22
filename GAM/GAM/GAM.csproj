@@ -187,6 +187,11 @@
     <Compile Include="FrmReport.Designer.cs">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="GGYWDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GGYWDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Libs\ExcelHelper.cs" />
     <Compile Include="Libs\SQLiteHelper.cs" />
     <Compile Include="Models\Model.cs" />
@@ -248,6 +253,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="GGYWDataSet.xsc">
+      <DependentUpon>GGYWDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GGYWDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GGYWDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GGYWDataSet.xss">
+      <DependentUpon>GGYWDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\GAM.Models.DbEntityEnterprise.datasource" />
     <None Include="Properties\Settings.settings">

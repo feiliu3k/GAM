@@ -51,24 +51,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.txtCreatAt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.pnlEnterprise.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.pnlEnterprise);
@@ -79,7 +77,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(28, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1015, 813);
+            this.panel1.Size = new System.Drawing.Size(1015, 678);
             this.panel1.TabIndex = 1;
             // 
             // panel9
@@ -109,16 +107,16 @@
             this.panel8.Controls.Add(this.btnDelete);
             this.panel8.Controls.Add(this.btnCancel);
             this.panel8.Controls.Add(this.btnPrint);
-            this.panel8.Location = new System.Drawing.Point(-1, 748);
+            this.panel8.Location = new System.Drawing.Point(2, 625);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1012, 61);
+            this.panel8.Size = new System.Drawing.Size(1012, 48);
             this.panel8.TabIndex = 8;
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(115, 6);
+            this.btnDelete.Location = new System.Drawing.Point(115, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 40);
             this.btnDelete.TabIndex = 3;
@@ -129,7 +127,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCancel.Location = new System.Drawing.Point(509, 5);
+            this.btnCancel.Location = new System.Drawing.Point(509, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 2;
@@ -140,7 +138,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPrint.Location = new System.Drawing.Point(387, 5);
+            this.btnPrint.Location = new System.Drawing.Point(387, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(100, 40);
             this.btnPrint.TabIndex = 0;
@@ -155,9 +153,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEnterprise.AutoScroll = true;
             this.pnlEnterprise.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEnterprise.Controls.Add(this.txtCreatAt);
             this.pnlEnterprise.Location = new System.Drawing.Point(3, 304);
             this.pnlEnterprise.Name = "pnlEnterprise";
-            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 404);
+            this.pnlEnterprise.Size = new System.Drawing.Size(1007, 321);
             this.pnlEnterprise.TabIndex = 7;
             // 
             // panel6
@@ -308,29 +307,19 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "汕头市文化广电新闻出版局";
             // 
-            // panel10
-            // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.Controls.Add(this.txtCreatAt);
-            this.panel10.Location = new System.Drawing.Point(3, 711);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1007, 37);
-            this.panel10.TabIndex = 11;
-            // 
             // txtCreatAt
             // 
             this.txtCreatAt.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCreatAt.Location = new System.Drawing.Point(724, 3);
+            this.txtCreatAt.Location = new System.Drawing.Point(615, 283);
             this.txtCreatAt.Name = "txtCreatAt";
             this.txtCreatAt.Size = new System.Drawing.Size(280, 31);
-            this.txtCreatAt.TabIndex = 6;
+            this.txtCreatAt.TabIndex = 13;
             // 
             // FrmDisplayAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 816);
+            this.ClientSize = new System.Drawing.Size(1066, 681);
             this.Controls.Add(this.panel1);
             this.Name = "FrmDisplayAction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -340,6 +329,8 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.pnlEnterprise.ResumeLayout(false);
+            this.pnlEnterprise.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -350,8 +341,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -381,7 +370,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox txtCreatAt;
     }
 }

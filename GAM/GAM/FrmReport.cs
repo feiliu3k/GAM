@@ -21,6 +21,7 @@ namespace GAM
         private List<ChargeMan> chms = null;
         private Area ar = null;
         private EnterpriseCategory ec= null;
+        private string createtime = null;
         private List<DbEntityEnterprise> ents = null;
 
         public  DataTable ToDataTable<T>(IEnumerable<T> collection)
@@ -44,7 +45,7 @@ namespace GAM
             }
             return dt;
         }
-        public FrmReport(List<CommonMan> ccms, List<ChargeMan> cchms, Area ar, EnterpriseCategory ec, List<DbEntityEnterprise> cents)
+        public FrmReport(List<CommonMan> ccms, List<ChargeMan> cchms, Area ar, EnterpriseCategory ec, List<DbEntityEnterprise> cents, string createAt)
         {
             InitializeComponent();
             this.cms = ccms;
@@ -52,6 +53,7 @@ namespace GAM
             this.ar = ar;
             this.ec = ec;
             this.ents = cents;
+            this.createtime = createAt;
 
         }
 
@@ -74,9 +76,9 @@ namespace GAM
             ReportParameter commonMen = new ReportParameter("commonMen", commonMan_name);
             ReportParameter cateName = new ReportParameter("cateName", this.ec.Catename);
             ReportParameter areaName = new ReportParameter("areaName", this.ar.Areaname);
-
+            ReportParameter createtime = new ReportParameter("createtime", this.createtime);
             this.reportViewer1.LocalReport.DataSources.Clear();
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { chargeMan, commonMen, cateName, areaName });
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { chargeMan, commonMen, cateName, areaName,createtime });
             this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("myds", mydt));
             
 

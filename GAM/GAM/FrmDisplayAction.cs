@@ -19,13 +19,14 @@ namespace GAM
         private string databasename;       
         private int actionID;
 
-        List<TextBox> tbEnts = new List<TextBox>();
+        private List<TextBox> tbEnts = new List<TextBox>();
 
-        List<CommonMan> commonMen = null;
-        List<ChargeMan> chargeMen = null;
-        List<Area> areas = null;
-        List<EnterpriseCategory> cates = null;
-        List<DbEntityEnterprise> ents = null;
+        private List<CommonMan> commonMen = null;
+        private List<ChargeMan> chargeMen = null;
+        private Area area = null;
+        private EnterpriseCategory cate = null;
+        private List<DbEntityEnterprise> ents = null;
+        string createAt = "";
 
         public FrmDisplayAction(int actionID)
         {
@@ -56,16 +57,10 @@ namespace GAM
             {
                 txtCommonMan.Text += cm.Name + "  ";
             }
-            areas = con.Query<Area>("select ar.* from areas ar join check_action ca on ca.area_id=ar.id where ca.id=@actionID", new { actionID = this.actionID }).ToList();
-            foreach (Area ar in areas)
-            {
-                txtArea.Text += ar.Areaname + "  ";
-            }
-            cates = con.Query<EnterpriseCategory>("select ec.* from enterprise_category ec join check_action ca on ca.cate_id=ec.id where ca.id=@actionID", new { actionID = this.actionID }).ToList();
-            foreach (EnterpriseCategory ec in cates)
-            {
-                txtCate.Text += ec.Catename + "  ";
-            }
+            area = con.Query<Area>("select ar.* from areas ar join check_action ca on ca.area_id=ar.id where ca.id=@actionID", new { actionID = this.actionID }).Single();
+            txtArea.Text = area.Areaname;
+            cate = con.Query<EnterpriseCategory>("select ec.* from enterprise_category ec join check_action ca on ca.cate_id=ec.id where ca.id=@actionID", new { actionID = this.actionID }).Single();
+            txtCate.Text = cate.Catename;
             ents = con.Query<DbEntityEnterprise>("select ent.* from enterprise ent join choice_enterprise cent on ent.id=cent.enterprise_id where cent.checkaction_id=@actionID", new
             {
                 actionID = this.actionID,
@@ -77,7 +72,10 @@ namespace GAM
             {
                 actionID = this.actionID
             }).Single();
-            txtCreatAt.Text = ca.Create_at.ToString();
+
+            txtCreatAt.Text = ca.Create_at.ToLongDateString();
+            this.createAt = ca.Create_at.ToLongDateString();
+
             con.Close();
 
             int entNum = ents.Count;
@@ -93,7 +91,7 @@ namespace GAM
                     txtEntName.Top = 3 + i * (25 + 10);
                     txtEntName.Parent = pnlEnterprise;
                     txtEntName.Font = new Font("宋体", txtChargeMan.Font.Size, txtChargeMan.Font.Style);
-                    txtEntName.Text=(i+1)+"、"+ents[i].Name;
+                    txtEntName.Text=(i+1)+"、"+ents[i].Name+"("+ents[i].Addr+")";
                    
                 }
 
@@ -121,7 +119,10 @@ namespace GAM
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            //打印报表
+            
+            FrmReport frmReport = new FrmReport(commonMen, chargeMen, area, cate, ents,createAt);
+            frmReport.ShowDialog();
         }
     }
 }

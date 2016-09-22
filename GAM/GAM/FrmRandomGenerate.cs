@@ -167,7 +167,7 @@ namespace GAM
                         break;
                     }
                     DbEntityEnterprise ent = ents.OrderBy(_ => Guid.NewGuid()).First();
-                    tbEnts[i].Text =(i+1)+"、"+ ent.Name;
+                    tbEnts[i].Text =(i+1)+"、"+ ent.Name+"("+ent.Addr+")";
                     ents.Remove(ent);
                     choiceEnts.Add(ent);
                    
@@ -185,12 +185,12 @@ namespace GAM
             {
                 btnSave_Click(sender, e);
             }
-            
 
 
-           
+            DateTime dt = DateTime.Now;
+            string createAt = dt.ToLongDateString();
             //打印报表
-            FrmReport frmReport = new FrmReport(choiceCommonMen, choiceChargeMen, choiceArea, choiceCate, choiceEnts);
+            FrmReport frmReport = new FrmReport(choiceCommonMen, choiceChargeMen, choiceArea, choiceCate, choiceEnts,createAt);
             frmReport.ShowDialog();
 
         }
@@ -207,7 +207,7 @@ namespace GAM
                 sb.DataSource = databasename;
                 SQLiteConnection con = new SQLiteConnection(sb.ToString());
                 con.Open();                
-                int actionid=con.Execute("insert into check_action(area_id,cate_id,charge_num,common_num,chkent_num) values (@area_id,@cate_id,@charge_num,@common_num,@chkent_num)", new
+                con.Execute("insert into check_action(area_id,cate_id,charge_num,common_num,chkent_num) values (@area_id,@cate_id,@charge_num,@common_num,@chkent_num)", new
                 { 
                     area_id = areas[0].Id,
                     cate_id = cates[0].Id,
@@ -215,6 +215,7 @@ namespace GAM
                     charge_num = int.Parse(nudChargeMan.Value.ToString()),
                     chkent_num = int.Parse(nudEnterprise.Value.ToString())                   
                 });
+                int actionid = con.Query<int>("Select max(id) from check_action").Single();
                 foreach (ChargeMan chm in choiceChargeMen)
                 {
                     con.Execute("insert into choice_charge_man(chargeman_id,checkaction_id) values (@chargeman_id,@checkaction_id)", new
