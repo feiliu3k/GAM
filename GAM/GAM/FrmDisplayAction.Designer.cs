@@ -36,6 +36,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.pnlEnterprise = new System.Windows.Forms.Panel();
+            this.txtCreatAt = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCreatAt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -158,6 +158,15 @@
             this.pnlEnterprise.Name = "pnlEnterprise";
             this.pnlEnterprise.Size = new System.Drawing.Size(1007, 321);
             this.pnlEnterprise.TabIndex = 7;
+            // 
+            // txtCreatAt
+            // 
+            this.txtCreatAt.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCreatAt.Location = new System.Drawing.Point(615, 283);
+            this.txtCreatAt.Name = "txtCreatAt";
+            this.txtCreatAt.Size = new System.Drawing.Size(280, 31);
+            this.txtCreatAt.TabIndex = 13;
+            this.txtCreatAt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel6
             // 
@@ -306,14 +315,6 @@
             this.label1.Size = new System.Drawing.Size(447, 35);
             this.label1.TabIndex = 2;
             this.label1.Text = "汕头市文化广电新闻出版局";
-            // 
-            // txtCreatAt
-            // 
-            this.txtCreatAt.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtCreatAt.Location = new System.Drawing.Point(615, 283);
-            this.txtCreatAt.Name = "txtCreatAt";
-            this.txtCreatAt.Size = new System.Drawing.Size(280, 31);
-            this.txtCreatAt.TabIndex = 13;
             // 
             // FrmDisplayAction
             // 

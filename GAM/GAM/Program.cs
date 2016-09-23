@@ -27,9 +27,8 @@ namespace GAM
             else
             {
                 return;
-            }
-            
-            Application.Run(new FrmMain());
+            }           
+           
         }
     }
 }

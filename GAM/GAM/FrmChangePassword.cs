@@ -21,6 +21,7 @@ namespace GAM
         {
             InitializeComponent();
             databasename = ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
+            this.AcceptButton = btnLogin;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -34,7 +35,13 @@ namespace GAM
             string password = txtPassword.Text.Trim();
             string newpassword = txtNewPassword.Text.Trim();
             string confirmpassword = txtConfirmPassword.Text.Trim();
-
+            if ("" == newpassword)
+            {
+                MessageBox.Show("用户名不能为空，请重新输入!", "错误");
+                txtNewPassword.Text = "";
+                txtConfirmPassword.Text = "";
+                txtNewPassword.Focus();
+            }
             SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
             sb.DataSource = databasename;
             SQLiteConnection con = new SQLiteConnection(sb.ToString());
@@ -54,7 +61,12 @@ namespace GAM
                     MessageBox.Show("输入的密码不一致，请检查!", "错误");
                 }
             }
+            else
+            {
+                MessageBox.Show("输入的老用户密码错误，请检查!", "错误");
+            }
             con.Close();
+            MessageBox.Show("密码修改已成功，请重新退出登录!", "信息");
             this.Close();
         }
     }

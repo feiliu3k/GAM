@@ -119,39 +119,39 @@ namespace GAM
                 " join enterprise_type t on e.typeid=t.id where e.delflag=0 ";
             if ("" != eid)
             {
-                sql += "and e.eid=" + eid;
+                sql += " and e.eid=" + eid;
             }
             if ("" != name)
             {
-                sql += "and e.name like %" + name + "%";
+                sql += " and e.name like '%" + name + "%'";
             }
             if ("" != addr)
             {
-                sql += "and e.addr like %" + addr + "%";
+                sql += " and e.addr like '%" + addr + "%'";
             }
             if ("" != apname)
             {
-                sql += "and e.apname like %" + apname + "%";
+                sql += " and e.apname like '%" + apname + "%'";
             }
             if ("" != aptelphone)
             {
-                sql += "and e.aptelphone like %" + aptelphone + "%";
+                sql += " and e.aptelphone like '%" + aptelphone + "%'";
             }
             if ("" != apcellphone)
             {
-                sql += "and e.apcellphone like %" + apcellphone + "%";
+                sql += " and e.apcellphone like '%" + apcellphone + "%'";
             }
             if (areaid != 0)
             {
-                sql += "and e.areaid=" + areaid;
+                sql += " and e.areaid=" + areaid;
             }
             if (cateid != 0)
             {
-                sql += "and e.cateid=" + cateid;
+                sql += " and e.cateid=" + cateid;
             }
             if (typeid != 0)
             {
-                sql += "and e.typeid=" + typeid;
+                sql += " and e.typeid=" + typeid;
             }
 
             SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
