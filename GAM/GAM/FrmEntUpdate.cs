@@ -22,7 +22,7 @@ namespace GAM
         public FrmEntUpdate(Int32 entid)
         {
             InitializeComponent();
-            databasename = Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBasePath"];
+            databasename = Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
             this.entId = entid;
         }
 
