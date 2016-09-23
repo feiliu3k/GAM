@@ -25,7 +25,7 @@ namespace GAM
         public FrmEntLoad()
         {
             InitializeComponent();
-            databasename = ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
+            databasename = Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

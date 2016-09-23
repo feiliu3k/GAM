@@ -62,13 +62,13 @@ namespace GAM
             string chargeMan_name="";
             for (int i = 0; i < this.chms.Count; i++)
             {
-                chargeMan_name += chms[i].Name + "  ";
+                chargeMan_name += chms[i].Name + " ";
             }
 
             string commonMan_name = "";
             for (int i = 0; i < this.cms.Count; i++)
             {
-                commonMan_name += cms[i].Name + "  ";
+                commonMan_name += cms[i].Name + " ";
             }
             DataTable mydt = ToDataTable<DbEntityEnterprise>(this.ents);
 
@@ -83,6 +83,7 @@ namespace GAM
             
 
             this.reportViewer1.RefreshReport();
+            
         }
 
     }

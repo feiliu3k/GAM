@@ -53,7 +53,7 @@ namespace GAM
         public FrmRandomGenerate()
         {
             InitializeComponent();
-            databasename = ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
+            databasename = Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

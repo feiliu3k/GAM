@@ -22,7 +22,7 @@ namespace GAM
         public FrmChargeMan()
         {
             InitializeComponent();
-            databasename = ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
+            databasename = Directory.GetCurrentDirectory() + ConfigurationManager.AppSettings["DataBasePath"] + ConfigurationManager.AppSettings["DataBase"];
         }
 
         private void initInput()
