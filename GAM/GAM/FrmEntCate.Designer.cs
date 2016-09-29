@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chbActive = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rtbCateRemark = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.catename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chbActive = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,6 +85,8 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(443, 447);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView1_CurrentCellDirtyStateChanged);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // groupBox1
@@ -108,6 +110,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "企业管理类别";
+            // 
+            // chbActive
+            // 
+            this.chbActive.AutoSize = true;
+            this.chbActive.Location = new System.Drawing.Point(139, 230);
+            this.chbActive.Name = "chbActive";
+            this.chbActive.Size = new System.Drawing.Size(69, 29);
+            this.chbActive.TabIndex = 21;
+            this.chbActive.Text = "激活";
+            this.chbActive.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -234,18 +246,7 @@
             this.active.FalseValue = "false";
             this.active.HeaderText = "激活";
             this.active.Name = "active";
-            this.active.ReadOnly = true;
             this.active.TrueValue = "true";
-            // 
-            // chbActive
-            // 
-            this.chbActive.AutoSize = true;
-            this.chbActive.Location = new System.Drawing.Point(139, 230);
-            this.chbActive.Name = "chbActive";
-            this.chbActive.Size = new System.Drawing.Size(69, 29);
-            this.chbActive.TabIndex = 21;
-            this.chbActive.Text = "激活";
-            this.chbActive.UseVisualStyleBackColor = true;
             // 
             // FrmEntCate
             // 
@@ -280,10 +281,10 @@
         private System.Windows.Forms.TextBox txtCateID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chbActive;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn catename;
         private System.Windows.Forms.DataGridViewTextBoxColumn remark;
         private System.Windows.Forms.DataGridViewCheckBoxColumn active;
-        private System.Windows.Forms.CheckBox chbActive;
     }
 }

@@ -135,5 +135,35 @@ namespace GAM
             chbActive.Checked = Boolean.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex != -1 && !dataGridView1.Rows[e.RowIndex].IsNewRow)
+            {
+                if (e.ColumnIndex == 3)
+                {
+
+                    SQLiteConnectionStringBuilder sb = new SQLiteConnectionStringBuilder();
+                    sb.DataSource = databasename;
+                    SQLiteConnection con = new SQLiteConnection(sb.ToString());
+                    con.Open();
+                    con.Execute("update enterprise_type set  active=@active where id=@typeid ",
+                    new
+                    {
+                        typeid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(),
+                        active = (bool)this.dataGridView1[e.ColumnIndex, e.RowIndex].Value,
+
+                    });
+                    con.Close();
+                }
+            }
+        }
+
+        private void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
     }
 }
