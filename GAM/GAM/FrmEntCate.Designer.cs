@@ -30,9 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rtbCateRemark = new System.Windows.Forms.RichTextBox();
@@ -44,6 +41,11 @@
             this.txtCateID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chbActive = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,7 +77,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.catename,
-            this.remark});
+            this.remark,
+            this.active});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -84,29 +87,9 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.FillWeight = 60F;
-            this.id.HeaderText = "编号";
-            this.id.Name = "id";
-            // 
-            // catename
-            // 
-            this.catename.DataPropertyName = "catename";
-            this.catename.FillWeight = 120F;
-            this.catename.HeaderText = "管理类别";
-            this.catename.Name = "catename";
-            // 
-            // remark
-            // 
-            this.remark.DataPropertyName = "remark";
-            this.remark.FillWeight = 120F;
-            this.remark.HeaderText = "备注";
-            this.remark.Name = "remark";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chbActive);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.rtbCateRemark);
             this.groupBox1.Controls.Add(this.label3);
@@ -130,7 +113,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(132, 200);
+            this.label4.Location = new System.Drawing.Point(132, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 25);
             this.label4.TabIndex = 9;
@@ -138,7 +121,7 @@
             // 
             // rtbCateRemark
             // 
-            this.rtbCateRemark.Location = new System.Drawing.Point(137, 254);
+            this.rtbCateRemark.Location = new System.Drawing.Point(139, 284);
             this.rtbCateRemark.Name = "rtbCateRemark";
             this.rtbCateRemark.Size = new System.Drawing.Size(242, 96);
             this.rtbCateRemark.TabIndex = 8;
@@ -148,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(24, 260);
+            this.label3.Location = new System.Drawing.Point(24, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 21);
             this.label3.TabIndex = 7;
@@ -157,7 +140,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDelete.Location = new System.Drawing.Point(270, 375);
+            this.btnDelete.Location = new System.Drawing.Point(272, 405);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 38);
             this.btnDelete.TabIndex = 6;
@@ -168,7 +151,7 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnModify.Location = new System.Drawing.Point(149, 375);
+            this.btnModify.Location = new System.Drawing.Point(151, 405);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(109, 38);
             this.btnModify.TabIndex = 5;
@@ -179,7 +162,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAdd.Location = new System.Drawing.Point(28, 375);
+            this.btnAdd.Location = new System.Drawing.Point(28, 405);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 38);
             this.btnAdd.TabIndex = 4;
@@ -224,6 +207,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "编号";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.FillWeight = 60F;
+            this.id.HeaderText = "编号";
+            this.id.Name = "id";
+            // 
+            // catename
+            // 
+            this.catename.DataPropertyName = "catename";
+            this.catename.FillWeight = 120F;
+            this.catename.HeaderText = "管理类别";
+            this.catename.Name = "catename";
+            // 
+            // remark
+            // 
+            this.remark.DataPropertyName = "remark";
+            this.remark.FillWeight = 120F;
+            this.remark.HeaderText = "备注";
+            this.remark.Name = "remark";
+            // 
+            // active
+            // 
+            this.active.DataPropertyName = "active";
+            this.active.FalseValue = "false";
+            this.active.HeaderText = "激活";
+            this.active.Name = "active";
+            this.active.ReadOnly = true;
+            this.active.TrueValue = "true";
+            // 
+            // chbActive
+            // 
+            this.chbActive.AutoSize = true;
+            this.chbActive.Location = new System.Drawing.Point(139, 230);
+            this.chbActive.Name = "chbActive";
+            this.chbActive.Size = new System.Drawing.Size(69, 29);
+            this.chbActive.TabIndex = 21;
+            this.chbActive.Text = "激活";
+            this.chbActive.UseVisualStyleBackColor = true;
+            // 
             // FrmEntCate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -260,5 +283,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn catename;
         private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn active;
+        private System.Windows.Forms.CheckBox chbActive;
     }
 }

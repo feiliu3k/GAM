@@ -35,7 +35,7 @@ namespace GAM
         {
 
             DataTable dt = new DataTable();
-            string sql = "select id,areaname,remark from areas where delflag=0";
+            string sql = "select id,areaname,remark,active from areas where delflag=0";
             SQLiteCommand command = new SQLiteCommand(sql, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             adapter.Fill(dt);
@@ -63,12 +63,13 @@ namespace GAM
             con.Open();
             string areaname = txtAreaName.Text.Trim();
             string remark = rtbAreaRemark.Text.Trim();
-
-            con.Execute(" insert into areas(areaname,remark) values (@areaname,@remark)"
+            bool active = chbActive.Checked;
+            con.Execute(" insert into areas(areaname,remark, active) values (@areaname,@remark,@active)"
             , new
             {
                 areaname = areaname,
                 remark = remark,
+                active = active,
 
             });
 
@@ -86,12 +87,14 @@ namespace GAM
             string areaid = txtAreaID.Text.Trim();
             string areaname = txtAreaName.Text.Trim();
             string remark = rtbAreaRemark.Text.Trim();
-            con.Execute("update areas set areaname=@areaname, remark=@remark where id=@areaid ",
+            bool active = chbActive.Checked;
+            con.Execute("update areas set areaname=@areaname, remark=@remark, active=@active where id=@areaid ",
             new
             {
                 areaid = areaid,
                 areaname = areaname,
                 remark = remark,
+                active=active,
 
             });
             DisplayData(con);
@@ -123,6 +126,11 @@ namespace GAM
             txtAreaID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtAreaName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             rtbAreaRemark.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            chbActive.Checked = Boolean.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
+
+       
+
+       
     }
 }

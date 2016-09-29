@@ -38,7 +38,7 @@ namespace GAM
         {
             
             DataTable dt = new DataTable();
-            string sql = "select id,typename,remark from enterprise_type where delflag=0";
+            string sql = "select id,typename,remark, active from enterprise_type where delflag=0";
             SQLiteCommand command = new SQLiteCommand(sql, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);          
             adapter.Fill(dt);
@@ -67,13 +67,14 @@ namespace GAM
             con.Open();
             string typename = txtTypeName.Text.Trim();
             string remark = rtbTypeRemark.Text.Trim();
-
-            con.Execute(" insert into enterprise_type(typename,remark) values (@typename,@remark)"
+            bool active = chbActive.Checked;
+            con.Execute(" insert into enterprise_type(typename,remark,active) values (@typename,@remark ,@active)"
             , new
             {
                 typename = typename,
-                remark = remark,               
-               
+                remark = remark,
+                active = active,
+
             });
 
             DisplayData(con);
@@ -111,12 +112,14 @@ namespace GAM
             string typeid = txtTypeID.Text.Trim();
             string typename = txtTypeName.Text.Trim();
             string remark = rtbTypeRemark.Text.Trim();
-            con.Execute("update enterprise_type set typename=@typename, remark=@remark where id=@typeid ",
+            bool active = chbActive.Checked;
+            con.Execute("update enterprise_type set typename=@typename, remark=@remark, active=@active where id=@typeid ",
             new
             {
                 typeid = typeid,
                 typename = typename,
                 remark = remark,
+                active = active,
 
             });
             DisplayData(con);
@@ -129,6 +132,7 @@ namespace GAM
             txtTypeID.Text =dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtTypeName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             rtbTypeRemark.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            chbActive.Checked = Boolean.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
     }

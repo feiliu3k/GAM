@@ -110,8 +110,8 @@ namespace GAM
             con.Open();
             commonMen = con.Query<CommonMan>("select * from common_man where delflag=0").ToList();
             chargeMen = con.Query<ChargeMan>("select * from charge_man where delflag=0").ToList();
-            areas = con.Query<Area>("select * from areas where delflag=0").ToList();
-            cates = con.Query<EnterpriseCategory>("select * from enterprise_category where delflag=0").ToList();
+            areas = con.Query<Area>("select * from areas where active=1 and delflag=0").ToList();
+            cates = con.Query<EnterpriseCategory>("select * from enterprise_category where active=1 and delflag=0").ToList();
             
             int chargeManNum = int.Parse(nudChargeMan.Value.ToString());
             int CommonManNum = int.Parse(nudCommonMan.Value.ToString());

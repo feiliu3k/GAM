@@ -36,7 +36,7 @@ namespace GAM
         {
 
             DataTable dt = new DataTable();
-            string sql = "select id,catename,remark from enterprise_category where delflag=0";
+            string sql = "select id,catename,remark,active from enterprise_category where delflag=0";
             SQLiteCommand command = new SQLiteCommand(sql, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             adapter.Fill(dt);
@@ -64,12 +64,13 @@ namespace GAM
             con.Open();
             string catename = txtCateName.Text.Trim();
             string remark = rtbCateRemark.Text.Trim();
-
-            con.Execute(" insert into enterprise_category(catename,remark) values (@catename,@remark)"
+            bool active = chbActive.Checked;
+            con.Execute(" insert into enterprise_category(catename,remark,active) values (@catename,@remark,@active)"
             , new
             {
                 catename = catename,
                 remark = remark,
+                active = active,
 
             });
 
@@ -87,12 +88,14 @@ namespace GAM
             string typeid = txtCateID.Text.Trim();
             string catename = txtCateName.Text.Trim();
             string remark = rtbCateRemark.Text.Trim();
-            con.Execute("update enterprise_category set catename=@catename, remark=@remark where id=@typeid ",
+            bool active = chbActive.Checked;
+            con.Execute("update enterprise_category set catename=@catename, remark=@remark,active=@active where id=@typeid ",
             new
             {
                 typeid = typeid,
                 catename = catename,
                 remark = remark,
+                active = active,
 
             });
             DisplayData(con);
@@ -124,6 +127,7 @@ namespace GAM
             txtCateID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtCateName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             rtbCateRemark.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            chbActive.Checked = Boolean.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
         }
 
 
