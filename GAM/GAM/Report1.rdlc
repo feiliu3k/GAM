@@ -86,7 +86,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>一、带队组长:</Value>
+                <Value>一、带队组长随机:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -106,7 +106,7 @@
         <Top>2.98979cm</Top>
         <Left>0.36777cm</Left>
         <Height>0.71437cm</Height>
-        <Width>4.1716cm</Width>
+        <Width>5.22993cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -125,7 +125,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>二、执法人员:</Value>
+                <Value>二、执法人员随机:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -145,7 +145,7 @@
         <Top>4.02167cm</Top>
         <Left>0.36777cm</Left>
         <Height>0.71437cm</Height>
-        <Width>4.1716cm</Width>
+        <Width>5.22993cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -164,7 +164,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>三、执法类型:</Value>
+                <Value>三、执法类型随机:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -184,7 +184,7 @@
         <Top>5.05354cm</Top>
         <Left>0.36777cm</Left>
         <Height>0.71437cm</Height>
-        <Width>4.1716cm</Width>
+        <Width>5.22993cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -203,7 +203,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>四、执法区域:</Value>
+                <Value>四、执法区域随机:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -220,10 +220,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.08542cm</Top>
-        <Left>0.36777cm</Left>
+        <Top>5.9443cm</Top>
+        <Left>0.34925cm</Left>
         <Height>0.71437cm</Height>
-        <Width>4.1716cm</Width>
+        <Width>5.22993cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -242,7 +242,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>五、执法检查对象:</Value>
+                <Value>五、随机时间：</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>宋体</FontFamily>
@@ -259,10 +259,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.97618cm</Top>
-        <Left>0.36776cm</Left>
+        <Top>6.83506cm</Top>
+        <Left>0.34924cm</Left>
         <Height>0.71437cm</Height>
-        <Width>5.92138cm</Width>
+        <Width>5.22994cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -297,10 +297,10 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>2.98979cm</Top>
-        <Left>4.75103cm</Left>
+        <Top>3.01625cm</Top>
+        <Left>5.77409cm</Left>
         <Height>0.71437cm</Height>
-        <Width>10.93876cm</Width>
+        <Width>9.9157cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -340,10 +340,10 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>4.02167cm</Top>
-        <Left>4.75103cm</Left>
+        <Top>4.04813cm</Top>
+        <Left>5.77409cm</Left>
         <Height>0.71437cm</Height>
-        <Width>10.93876cm</Width>
+        <Width>9.9157cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -383,10 +383,10 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>5.05354cm</Top>
-        <Left>4.75103cm</Left>
+        <Top>5.08cm</Top>
+        <Left>5.77409cm</Left>
         <Height>0.71437cm</Height>
-        <Width>10.93876cm</Width>
+        <Width>9.9157cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -426,10 +426,10 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>6.08542cm</Top>
-        <Left>4.71576cm</Left>
+        <Top>5.9443cm</Top>
+        <Left>5.74204cm</Left>
         <Height>0.71437cm</Height>
-        <Width>10.97404cm</Width>
+        <Width>9.92923cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -555,8 +555,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>myds</DataSetName>
-        <Top>7.86694cm</Top>
-        <Left>1.24566cm</Left>
+        <Top>8.75769cm</Top>
+        <Left>1.22714cm</Left>
         <Height>0.99219cm</Height>
         <Width>14.44413cm</Width>
         <ZIndex>11</ZIndex>
@@ -586,14 +586,14 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>19.61709cm</Top>
-        <Left>8.41816cm</Left>
+        <Top>6.84212cm</Top>
+        <Left>5.75557cm</Left>
         <Height>0.71437cm</Height>
-        <Width>7.27164cm</Width>
+        <Width>9.9157cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -610,11 +610,100 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>六、执法检查对象随机</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>：</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>7.72582cm</Top>
+        <Left>0.33073cm</Left>
+        <Height>0.71437cm</Height>
+        <Width>15.34054cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>领导审批：</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>17.79102cm</Top>
+        <Left>1.22714cm</Left>
+        <Height>0.71437cm</Height>
+        <Width>3.19265cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>8.58159in</Height>
+    <Height>7.63367in</Height>
     <Style />
   </Body>
-  <Width>6.47384in</Width>
+  <Width>6.35926in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
