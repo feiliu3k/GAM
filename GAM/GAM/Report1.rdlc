@@ -601,7 +601,7 @@
           </Border>
           <BottomBorder>
             <Color>Black</Color>
-            <Style>None</Style>
+            <Style>Solid</Style>
             <Width>1pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
