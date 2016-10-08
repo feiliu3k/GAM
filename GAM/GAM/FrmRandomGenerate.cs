@@ -209,8 +209,8 @@ namespace GAM
                 con.Open();                
                 con.Execute("insert into check_action(area_id,cate_id,charge_num,common_num,chkent_num) values (@area_id,@cate_id,@charge_num,@common_num,@chkent_num)", new
                 { 
-                    area_id = areas[0].Id,
-                    cate_id = cates[0].Id,
+                    area_id = choiceArea.Id,
+                    cate_id = choiceCate.Id,
                     common_num = int.Parse(nudCommonMan.Value.ToString()),
                     charge_num = int.Parse(nudChargeMan.Value.ToString()),
                     chkent_num = int.Parse(nudEnterprise.Value.ToString())                   
